@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Destination Alert</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <h2>Destination Alert System</h2>
+  <p>Click on the map to set your destination.</p>
+
+  <button onclick="startTracking()">Start Tracking</button>
+  <button onclick="toggleSound()" id="soundToggle">Sound: On 🔊</button>
+
+  <label for="radiusSlider">Alert Radius: <span id="radiusValue">500</span> m</label>
+  <input type="range" id="radiusSlider" min="100" max="2000" step="100" value="500" onchange="updateRadius()" />
+
+  <div class="image-card"></div>
+
+  <div id="map"></div>
+  <div id="status">Status: Not tracking</div>
+
+  <audio id="alarmSound" src="https://www.soundjay.com/buttons/sounds/beep-07.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAONcnUZR5a-k-NwWYROckIIH4Zo12tmAY&callback=initMap">
+  </script>
+
+</body>
+</html>
